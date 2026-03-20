@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- TREE VIEW -->
+  <record id="view_asset_category_tree" model="ir.ui.view">
+    <field name="name">asset.category.tree</field>
+    <field name="model">asset.category</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="code"/>
+            <field name="name"/>
+            <field name="management_type"/>
+            <field name="total_quantity"/>
+            <field name="available_quantity"/>
+        </tree>
+    </field>
+</record>
+
+
+    <!-- FORM VIEW -->
+    <record id="view_asset_category_form" model="ir.ui.view">
+    <field name="name">asset.category.form</field>
+    <field name="model">asset.category</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="management_type"/>
+                </group>
+
+                <group attrs="{'invisible': [('management_type', '=', 'individual')]}">
+                    <field name="total_quantity"/>
+                    <field name="used_quantity" readonly="1"/>
+                    <field name="available_quantity" readonly="1"/>
+                </group>
+
+                <group>
+                    <field name="description"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+    <!-- ACTION -->
+    <record id="action_asset_category" model="ir.actions.act_window">
+        <field name="name">Loại tài sản</field>
+        <field name="res_model">asset.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,19 @@
+<odoo>
+
+    <menuitem id="menu_meeting_root"
+              name="Quản lý phòng họp"
+              sequence="20"/>
+
+    <menuitem id="menu_meeting_room"
+              name="Phòng họp"
+              parent="menu_meeting_root"
+              action="action_meeting_room"
+              sequence="10"/>
+
+    <menuitem id="menu_meeting_schedule"
+              name="Lịch phòng họp"
+              parent="menu_meeting_root"
+              action="action_meeting_schedule"
+              sequence="20"/>
+
+</odoo>

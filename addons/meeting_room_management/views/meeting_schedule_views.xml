@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_meeting_schedule_tree" model="ir.ui.view">
+        <field name="name">meeting.schedule.tree</field>
+        <field name="model">meeting.schedule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="meeting_room_id"/>
+                <field name="organizer_id"/>
+                <field name="start_datetime"/>
+                <field name="end_datetime"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_meeting_schedule_form" model="ir.ui.view">
+        <field name="name">meeting.schedule.form</field>
+        <field name="model">meeting.schedule</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <group>
+                        <field name="meeting_room_id"/>
+                        <field name="organizer_id"/>
+                        <field name="start_datetime"/>
+                        <field name="end_datetime"/>
+                    </group>
+
+                    <group>
+                        <field name="participant_ids"/>
+                        <field name="device_ids"/>
+                        <field name="state"/>
+                        <field name="note"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_meeting_schedule" model="ir.actions.act_window">
+        <field name="name">Lịch phòng họp</field>
+        <field name="res_model">meeting.schedule</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

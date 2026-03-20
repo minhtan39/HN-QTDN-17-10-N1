@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- MENU GỐC -->
+    <menuitem
+        id="menu_asset_root"
+        name="Quản lý tài sản"
+        sequence="10"/>
+
+    <!-- LOẠI TÀI SẢN -->
+    <record id="action_asset_category" model="ir.actions.act_window">
+        <field name="name">Loại tài sản</field>
+        <field name="res_model">asset.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_asset_category"
+        name="Loại tài sản"
+        parent="menu_asset_root"
+        action="action_asset_category"
+        sequence="10"/>
+
+    <!-- VỊ TRÍ TÀI SẢN -->
+    <record id="action_asset_location" model="ir.actions.act_window">
+        <field name="name">Vị trí tài sản</field>
+        <field name="res_model">asset.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_asset_location"
+        name="Vị trí tài sản"
+        parent="menu_asset_root"
+        action="action_asset_location"
+        sequence="20"/>
+
+    <!-- MƯỢN TÀI SẢN -->
+    <record id="action_asset_history" model="ir.actions.act_window">
+        <field name="name">Mượn tài sản</field>
+        <field name="res_model">asset.history</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_asset_history"
+        name="Mượn tài sản"
+        parent="menu_asset_root"
+        action="action_asset_history"
+        sequence="30"/>
+
+</odoo>
